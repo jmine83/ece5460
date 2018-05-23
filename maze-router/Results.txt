@@ -1,0 +1,38 @@
+The lab is worth 100 points:• Part A: 20 points: Correctly comment the IO.cpp file
+DONE
+• Part B: 20 points: Correctly answering the questions in your README.txt file
+DONE
+• Part C: 60 points:
+Code execution does not result in segmentation fault, and successfully routes 100% of the nets (30 points)
+>> simple.gr : DONE
+>> adaptec1.simple.gr : INCOMPLETE
+>> adaptec2.simple.gr : INCOMPLETE
+>> adaptec3.simple.gr : INCOMPLETE
+Correctly handle overflow, capacity, and boundary limitations (10 points)
+>> Overflow = DONE _ See file MazeRouter.cpp lines 254 to 297
+>> Capacity = DONE _ See file MazeRouter.cpp line 277
+>> Boundary Limitations = DONE _ See file MazeRouter.cpp line 165
+Implements A* algorithm (10 points)
+>> DONE = See file MazeRouter.cpp lines 117 to 345
+Produces results with total length for routed nets and wire length that exceed golden model results by no more than 1 % (10 points)
+>> simple.gr = DONE
+>> adaptec1.simple.gr : INCOMPLETE
+>> adaptec2.simple.gr : INCOMPLETE
+>> adaptec3.simple.gr : INCOMPLETE
+
+<< COMMENTARY >>
+
+The simple.gr benchmark works perfectly and running in the debug mode I implemented exhaustively shows it is working correctly to my knowledge.
+
+However, the adaptec* benchmarks run very slowly for some reason that I can't figure out why. After some time once it is about to complete stage 2 of initial routing, suddenly the program simply won't go any further. It would nonetheless be very interesting to me to know why it runs fine with the simple.gr benchmark but no the adaptec* benchmarks.
+
+I expect that I should at least receive 60 points on this assignment.
+
+Joel Meine
+A01764207
+
+#############################################################################
+
+SimpleGR 1.1 (64-bit) Compiled on Sun Dec 10 19:17:22 MST 2017 with GCC 4.8.3Reading from `simple.gr' ...grid size 3x3read in 1 GR nets from 1 nets designCPU time: 0.001596 secondsSimpleGR parameters:Design file to read:       simple.grMaximum RRR iterations:    20Max RRR runtime:           300 secondsMaximum greedy iterations: 1Save solution to file:     'simple.sol'[Initial routing starts]phase 1. routing flat GR netsscheduled number of workloads : 11 flat GR nets routedCPU time: 0.001728 seconds phase 2. routing remaining GR netsscheduled number of workloads : 0routed 0 GR nets[Initial routing ends]GR Stats : nets routed 1 (100%) total length for routed nets 8 total number of vias 6 total wire length 26 number of overflowing edges is 0 (0%) max overflow is 0 total overflow is 0 avg overflow is 0 CPU time: 0.00205 seconds[Iterative Rip-up and Re-Route starts]Performing at most 20 rip-up and re-route iteration(s)No more GR nets to rip up, quitting[Iterative Rip-up and Re-Route ends]GR Stats : nets routed 1 (100%) total length for routed nets 8 total number of vias 6 total wire length 26 number of overflowing edges is 0 (0%) max overflow is 0 total overflow is 0 avg overflow is 0 CPU time: 0.00205 seconds[Greedy improvement routing starts]performing 1 greedy improvement iteration(s)examining 1 GR nets scheduled number of workloads : 1after greedy improvement iteration 1total length for routed nets 8total number of vias 6total wire length 26number of overflowing edges is 0 (0%)total overflow is 0avg overflow is 0CPU time: 0.00205 seconds[Greedy improvement routing ends]GR Stats : Final nets routed 1 (100%) Final total length for routed nets 8 Final total number of vias 6 Final total wire length 26 Final number of overflowing edges is 0 (0%) Final max overflow is 0 Final total overflow is 0 Final avg overflow is 0 Final CPU time: 0.00205 secondsWriting `simple.sol' ... done
+
+#############################################################################
